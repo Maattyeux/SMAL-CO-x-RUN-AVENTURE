@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 72px;
+  background: var(--ink);
+}
+
+html.menu-open {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: var(--t-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+body::before {
+  /* bande de la zone sûre en haut (encoche) */
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 60;
+  background: var(--ink);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--violet);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--violet-2);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+section[tabindex='-1']:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip {
+  position: fixed;
+  left: var(--gutter);
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--fg);
+  color: var(--ink);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 200ms var(--ease-out);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+/* Conteneur : largeur maximale + gouttières sûres */
+.wrap {
+  width: 100%;
+  max-width: calc(var(--maxw) + var(--gutter) + var(--gutter-r));
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 700px) {
+  .wrap {
+    padding-left: max(40px, env(safe-area-inset-left, 0px));
+    padding-right: max(40px, env(safe-area-inset-right, 0px));
+  }
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+.section-tight {
+  padding-block: calc(var(--section) * 0.6);
+}
+
+/* ---------- Révélations au scroll ----------
+ * Les états cachés n'existent que lorsque le script a démarré
+ * (.reveal-ready) et que l'utilisateur accepte le mouvement.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready [data-reveal]:not(.is-in) {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  [data-reveal] {
+    transition:
+      opacity var(--dur) var(--ease-out),
+      transform var(--dur) var(--ease-out),
+      clip-path 1200ms var(--ease-io);
+  }
+
+  /* Titres : la ligne monte derrière un masque */
+  .reveal-ready [data-reveal='title'] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(-0.2em -100vw -0.25em -100vw);
+  }
+  [data-reveal='title'] > span {
+    display: inline-block;
+    transition: transform 1100ms var(--ease-out);
+  }
+  .reveal-ready [data-reveal='title']:not(.is-in) > span {
+    transform: translate3d(0, 105%, 0);
+  }
+
+  /* Images : un rideau qui s'ouvre du bas vers le haut */
+  /* Le masque est posé sur l'enfant : un élément entièrement découpé
+     ne serait jamais détecté par l'IntersectionObserver. */
+  .reveal-ready [data-reveal='mask']:not(.is-in) {
+    opacity: 1;
+    transform: none;
+  }
+  [data-reveal='mask'] > * {
+    transition: clip-path 1300ms var(--ease-io);
+  }
+  .reveal-ready [data-reveal='mask']:not(.is-in) > * {
+    clip-path: inset(100% 0 0 0);
+  }
+  .reveal-ready [data-reveal='mask'].is-in > * {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Images : se posent en dézoomant */
+  [data-reveal='zoom'] img {
+    transition: transform 1600ms var(--ease-out);
+  }
+  .reveal-ready [data-reveal='zoom']:not(.is-in) {
+    transform: none;
+  }
+  .reveal-ready [data-reveal='zoom']:not(.is-in) img {
+    transform: scale(1.18);
+  }
+
+  /* Groupes : enfants en cascade */
+  .reveal-ready [data-stagger] > * {
+    transition:
+      opacity 800ms var(--ease-out),
+      transform 800ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  .reveal-ready [data-stagger]:not(.is-in) > * {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+}

@@ -1,0 +1,445 @@
+/* ---------- Typographie partagée ---------- */
+.eyebrow {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--violet-2);
+}
+
+.display,
+.h2,
+.sh__title,
+.h3-display {
+  font-family: var(--f-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.98;
+  letter-spacing: -0.005em;
+}
+
+.display {
+  font-size: var(--t-display);
+  max-width: 15ch;
+  overflow-wrap: break-word;
+}
+
+.h2,
+.sh__title {
+  font-size: var(--t-h2);
+  max-width: 18ch;
+}
+
+.h3-display {
+  display: grid;
+  gap: 0.9rem;
+  font-size: var(--t-xl);
+  line-height: 1.05;
+}
+
+.lead,
+.sh__lead {
+  font-size: var(--t-lg);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+.note {
+  max-width: 68ch;
+  font-size: var(--t-sm);
+  color: var(--muted);
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+}
+
+.statement {
+  max-width: 30ch;
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.signature {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: var(--t-lg);
+  letter-spacing: 0.06em;
+  color: var(--violet-2);
+}
+
+/* Champ à compléter */
+.todo {
+  font-family: var(--f-mono);
+  font-size: 0.85em;
+  color: var(--gold);
+  border-bottom: 1px dashed currentColor;
+  white-space: nowrap;
+}
+
+/* ---------- En-tête de section ---------- */
+.sh {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    transform 250ms var(--ease-out),
+    border-color 250ms ease;
+}
+
+.btn--primary {
+  background: var(--fg);
+  color: var(--ink);
+}
+
+.btn--primary:hover {
+  background: var(--violet);
+  color: #fff;
+}
+
+.btn--ghost {
+  border: 1px solid rgba(243, 241, 250, 0.4);
+  color: var(--fg);
+}
+
+.btn--ghost:hover {
+  border-color: var(--fg);
+  background: rgba(243, 241, 250, 0.08);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform 300ms var(--ease-out);
+}
+
+.btn:hover .btn__arrow {
+  transform: translateY(3px);
+}
+
+.copy {
+  flex: none;
+  min-height: 36px;
+  padding: 0.35rem 0.8rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.copy:hover {
+  border-color: var(--violet-2);
+  background: rgba(123, 92, 255, 0.16);
+}
+
+/* ---------- Statuts ---------- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status--confirme {
+  background: var(--violet);
+  color: #fff;
+}
+.status--envisage {
+  background: var(--violet-deep);
+  color: #e3dcff;
+}
+.status--discussion,
+.status--idee {
+  background: rgba(165, 143, 255, 0.14);
+  color: var(--violet-2);
+}
+.status--a-confirmer,
+.status--etude {
+  background: rgba(216, 181, 107, 0.12);
+  color: var(--gold);
+}
+
+/* ---------- Listes ---------- */
+.checklist {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.6rem;
+  line-height: 1.5;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.7rem;
+  height: 2px;
+  background: var(--violet);
+}
+
+.callout {
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--t-lg);
+  line-height: 1.5;
+  color: var(--fg);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pills li {
+  padding: 0.5rem 1rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(243, 241, 250, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  background: rgba(11, 10, 20, 0.35);
+}
+
+/* ---------- Texte progressif ---------- */
+.scroll-text__w {
+  color: var(--fg);
+}
+
+.scroll-text--live .scroll-text__w {
+  /* t = progression propre à ce mot (0 → 1) */
+  --t: clamp(0, calc(var(--p, 0) * (var(--n) + 4) - var(--i)), 1);
+  color: color-mix(in oklab, var(--fg) calc(var(--t) * 100%), var(--dim));
+}
+
+/* ---------- Parallaxe ---------- */
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  will-change: transform;
+}
+
+.parallax__layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Profondeur 3D ---------- */
+.tilt {
+  --rx: 0deg;
+  --ry: 0deg;
+  perspective: 1200px;
+}
+
+.tilt > * {
+  transition: transform 600ms var(--ease-out);
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .tilt > .collage__back {
+    transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+  }
+  .tilt > .collage__front {
+    transform: rotateX(var(--rx)) rotateY(var(--ry)) translate3d(calc(var(--ry) * 2.2), calc(var(--rx) * -2.2), 60px);
+  }
+}
+
+/* ---------- Galerie horizontale ---------- */
+.hgallery__sticky {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-block: 2rem 4rem;
+}
+
+.hgallery__head {
+  width: 100%;
+  max-width: calc(var(--maxw) + 80px);
+  margin-inline: auto;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 700px) {
+  .hgallery__head {
+    padding-inline: 40px;
+  }
+}
+
+.hgallery__title {
+  display: grid;
+  gap: 0.6rem;
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hgallery__track {
+  display: flex;
+  gap: clamp(12px, 1.5vw, 24px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--violet) transparent;
+}
+
+.hgallery--pinned .hgallery__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  align-content: center;
+  overflow: hidden;
+}
+
+.hgallery--pinned .hgallery__track {
+  justify-self: start;
+  overflow: visible;
+  width: max-content;
+  padding-inline: max(40px, calc((100vw - var(--maxw)) / 2));
+  will-change: transform;
+}
+
+.shot {
+  flex: none;
+  width: min(78vw, 360px);
+  scroll-snap-align: center;
+}
+
+.shot--wide {
+  width: min(86vw, 640px);
+}
+
+.hgallery--pinned .shot {
+  width: 30vw;
+}
+
+.hgallery--pinned .shot--wide {
+  width: 46vw;
+}
+
+.shot img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.shot--wide img {
+  aspect-ratio: 3 / 2;
+}
+
+.hgallery--pinned .shot img {
+  height: min(62vh, 640px);
+  aspect-ratio: auto;
+}
+
+.shot figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Tableaux ---------- */
+.table-wrap {
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: 1.1rem 1rem 1.1rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.table tbody th {
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+  transition: background-color 250ms ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(123, 92, 255, 0.07);
+}

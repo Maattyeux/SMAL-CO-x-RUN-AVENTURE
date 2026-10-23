@@ -1,0 +1,296 @@
+{
+  "hobby": {
+    "w": 1920,
+    "h": 1440,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/hobby-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/hobby-1920.webp"
+      }
+    ]
+  },
+  "road-bend": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/road-bend-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/road-bend-1920.webp"
+      }
+    ]
+  },
+  "road-group": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/road-group-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/road-group-1920.webp"
+      }
+    ]
+  },
+  "road-peloton": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/road-peloton-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/road-peloton-1920.webp"
+      }
+    ]
+  },
+  "road-solo": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/road-solo-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/road-solo-1920.webp"
+      }
+    ]
+  },
+  "run-310-city": {
+    "w": 1920,
+    "h": 1105,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/run-310-city-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/run-310-city-1920.webp"
+      }
+    ]
+  },
+  "run-310": {
+    "w": 1920,
+    "h": 1080,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/run-310-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/run-310-1920.webp"
+      }
+    ]
+  },
+  "run-action-1": {
+    "w": 1080,
+    "h": 1920,
+    "variants": [
+      {
+        "w": 720,
+        "file": "img/run-action-1-720.webp"
+      },
+      {
+        "w": 1080,
+        "file": "img/run-action-1-1080.webp"
+      }
+    ]
+  },
+  "run-action-2": {
+    "w": 1080,
+    "h": 1920,
+    "variants": [
+      {
+        "w": 720,
+        "file": "img/run-action-2-720.webp"
+      },
+      {
+        "w": 1080,
+        "file": "img/run-action-2-1080.webp"
+      }
+    ]
+  },
+  "run-bw-group": {
+    "w": 1920,
+    "h": 1080,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/run-bw-group-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/run-bw-group-1920.webp"
+      }
+    ]
+  },
+  "run-friends": {
+    "w": 1920,
+    "h": 1159,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/run-friends-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/run-friends-1920.webp"
+      }
+    ]
+  },
+  "run-group": {
+    "w": 1920,
+    "h": 1080,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/run-group-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/run-group-1920.webp"
+      }
+    ]
+  },
+  "run-portrait": {
+    "w": 1080,
+    "h": 1920,
+    "variants": [
+      {
+        "w": 720,
+        "file": "img/run-portrait-720.webp"
+      },
+      {
+        "w": 1080,
+        "file": "img/run-portrait-1080.webp"
+      }
+    ]
+  },
+  "run-shirts": {
+    "w": 1080,
+    "h": 1920,
+    "variants": [
+      {
+        "w": 720,
+        "file": "img/run-shirts-720.webp"
+      },
+      {
+        "w": 1080,
+        "file": "img/run-shirts-1080.webp"
+      }
+    ]
+  },
+  "studio-solo": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/studio-solo-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/studio-solo-1920.webp"
+      }
+    ]
+  },
+  "team-beach": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-beach-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-beach-1920.webp"
+      }
+    ]
+  },
+  "team-flag": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-flag-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-flag-1920.webp"
+      }
+    ]
+  },
+  "team-sea": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-sea-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-sea-1920.webp"
+      }
+    ]
+  },
+  "team-studio": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-studio-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-studio-1920.webp"
+      }
+    ]
+  },
+  "team-studio2": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-studio2-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-studio2-1920.webp"
+      }
+    ]
+  },
+  "team-wall": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/team-wall-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/team-wall-1920.webp"
+      }
+    ]
+  }
+}
