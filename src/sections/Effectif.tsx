@@ -11,7 +11,7 @@ function Bib({ a }: { a: Athlete }) {
     <article className={`bib bib--${a.status}`} aria-labelledby={`bib-${a.id}`}>
       <span className="bib__pins" aria-hidden="true" />
       <header className="bib__head">
-        <span className="bib__club">SMAL &amp; CO · Running / trail</span>
+        <span className="bib__club">Team SMAL &amp; CO · 2027</span>
         <span className={`status status--${a.status}`}>{STATUS_LABEL[a.status]}</span>
       </header>
       <h3 id={`bib-${a.id}`} className="bib__name">
@@ -21,6 +21,10 @@ function Bib({ a }: { a: Athlete }) {
         <div>
           <dt>Discipline</dt>
           <dd>{a.disciplines}</dd>
+        </div>
+        <div>
+          <dt>Niveau</dt>
+          <dd>{a.level ?? <span className="todo">à compléter</span>}</dd>
         </div>
         <div>
           <dt>Résultats</dt>

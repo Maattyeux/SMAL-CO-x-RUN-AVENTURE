@@ -10,11 +10,12 @@ import { Identite } from './sections/Identite';
 import { Partenariat } from './sections/Partenariat';
 import { Preuves } from './sections/Preuves';
 import { Running } from './sections/Running';
+import { Team } from './sections/Team';
 
 /**
  * Parcours narratif :
  * identité → cyclisme (socle) → preuves → running/trail (ambition)
- * → effectif → vision → les 3 axes → bénéfices → fonctionnement → contact.
+ * → Team 2026/2027 (le projet, le sponsor titre) → effectif → vision → les 3 axes → bénéfices → fonctionnement → contact.
  */
 export function App() {
   useReveal();
@@ -31,6 +32,7 @@ export function App() {
         <Cyclisme />
         <Preuves />
         <Running />
+        <Team />
         <Effectif />
         <Ambitions />
         <Partenariat />

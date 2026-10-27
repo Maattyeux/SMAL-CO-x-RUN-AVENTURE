@@ -1,5 +1,5 @@
 import { Photo } from '../components/Photo';
-import { SectionHeader } from '../components/ui';
+import { SectionHeader, Todo } from '../components/ui';
 import { benefices, fonctionnement } from '../data/content';
 
 export function Benefices() {
@@ -48,7 +48,9 @@ export function Fonctionnement() {
             <div key={t.k} className="term">
               <dt>{t.k}</dt>
               <dd>
-                <span className="term__v">{t.v}</span>
+                <span className="term__v">
+                  <Todo text={t.v} />
+                </span>
                 <span className={`status ${t.state === 'Proposition' ? 'status--idee' : 'status--etude'}`}>{t.state}</span>
               </dd>
             </div>

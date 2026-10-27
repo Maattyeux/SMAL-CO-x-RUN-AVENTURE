@@ -18,16 +18,17 @@ export const nav = [
   { id: 'identite', label: 'Identité' },
   { id: 'cyclisme', label: 'Cyclisme' },
   { id: 'running', label: 'Running / trail' },
+  { id: 'team', label: 'Team 2027' },
   { id: 'effectif', label: 'Effectif' },
   { id: 'partenariat', label: 'Partenariat' },
   { id: 'contact', label: 'Contact' },
 ] as const;
 
 export const hero = {
-  eyebrow: 'Proposition de partenariat · Pôle running / trail',
+  eyebrow: 'Dossier de sponsoring · Team Running / Trail 2026/2027',
   titleA: 'SMAL & CO',
   titleB: 'Run Aventure',
-  lead: 'Construire ensemble un collectif running / trail à Brest.',
+  lead: 'Créer le Team Running / Trail SMAL & CO, avec un partenaire titre à nos côtés.',
   ctaPrimary: 'Découvrir le projet',
   ctaSecondary: 'Proposer un rendez-vous',
 };
@@ -41,7 +42,7 @@ export const identite = {
     'La performance, la cohésion et l’envie de raconter ce que l’on construit. Chaque sortie, chaque course et chaque contenu sert le même projet : faire grandir un collectif sportif brestois, à taille humaine.',
   poles: [
     { name: 'Cyclisme', text: 'Premier pôle structuré, affilié à la FFC.', tag: 'Socle' },
-    { name: 'Running / trail', text: 'Second pôle, en construction. C’est l’objet de cette proposition.', tag: 'En construction' },
+    { name: 'Running / trail', text: 'Second pôle : un Team lancé pour la saison 2026/2027. C’est l’objet de ce dossier.', tag: 'Team 2027' },
     { name: 'Communication', text: 'Contenus et événements au service des deux pôles.', tag: 'Transversal' },
   ],
   timelineTitle: 'Une structure déjà en mouvement',
@@ -109,9 +110,9 @@ export const running = {
   title: 'Le running / trail : une nouvelle ambition',
   scrollText:
     'Des résultats individuels existent déjà. SMAL & CO veut les inscrire dans un collectif identifiable, humain et ambitieux, d’abord à l’échelle régionale. Le cyclisme nous a appris à structurer une équipe. Le running est la prochaine étape.',
-  pills: ['Recrutement progressif', 'Identité textile', 'Partenaire référent'],
+  pills: ['Team 2026/2027', 'Identité textile', 'Partenaire titre'],
   proofEyebrow: 'Preuves de potentiel',
-  proofTitle: 'Des résultats déjà là, avec un seul coureur',
+  proofTitle: 'Des résultats déjà là, avant même le Team',
   athlete: 'Ewen Premel',
   results: [
     { rank: '2e', race: 'Trail de Guerlédan 2026' },
@@ -119,33 +120,66 @@ export const running = {
     { rank: '2 h 37', race: 'Marathon' },
   ],
   podiums: 'Plusieurs podiums régionaux.',
-  stake: 'L’enjeu : démultiplier ces résultats et développer nos capacités sportives avec une équipe dédiée.',
+  stake: 'Dans le Team, Ewen court aux côtés de Lucas Tanné, vainqueur du Grand Raid du Finistère 2024, et de Moran Bars, 3e sur 450 au Trail du Bout du Monde. L’enjeu : réunir ces résultats sous un même maillot.',
+};
+
+export const team = {
+  eyebrow: 'Saison 2026/2027 · Ce que nous voulons',
+  title: 'Un Team Running / Trail, pas un club FFA',
+  lead: 'Pour 2026/2027, SMAL & CO crée un Team : un collectif de coureurs indépendant, porté par l’association, qui court sous les couleurs SMAL & CO. Nous ne créons pas de club affilié à la FFA.',
+  principles: [
+    {
+      name: 'Chacun garde son club',
+      text: 'Les coureurs conservent leur club et leur licence. Le Team s’ajoute à leur parcours, sans rien leur retirer.',
+    },
+    {
+      name: 'Le maillot SMAL & CO en course',
+      text: 'Le Team court la majorité de ses épreuves en tenue SMAL & CO. Le maillot du club reste porté sur les compétitions officielles, comme les championnats.',
+    },
+    {
+      name: 'Des coureurs qui s’engagent',
+      text: 'Chaque coureur adhère à SMAL & CO (50 € par coureur). Cette première trésorerie finance les premières tenues du Team.',
+    },
+    {
+      name: '2027, saison test',
+      text: 'Un bilan est prévu avant 2028 pour décider de la suite : poursuivre en Team ou étudier la création d’un club FFA.',
+    },
+  ],
+  why: 'Pourquoi un Team plutôt qu’un club FFA ? Une affiliation fédérale est lourde à mettre en place, et le paysage des clubs est déjà très concurrentiel. Le Team permet de démarrer vite, avec des coureurs déjà licenciés, et de faire nos preuves sur une saison.',
+  modelTitle: 'Un partenaire titre par discipline',
+  model: [
+    { pole: 'Cyclisme', structure: 'Équipe affiliée FFC, 12 coureurs', partner: 'Hobby Cycles', state: 'Partenaire référent' },
+    { pole: 'Running / trail', structure: 'Team indépendant, saison test 2027', partner: 'Run Aventure ?', state: 'Proposition' },
+  ],
+  sponsor:
+    'Comme Hobby Cycles pour le vélo, nous cherchons un sponsor titre pour le Team : un seul partenaire principal, spécialiste de la discipline, associé à chaque course, chaque tenue et chaque contenu de la saison. C’est la place que nous proposons à Run Aventure.',
 };
 
 export const effectif = {
-  eyebrow: 'Recrutement en cours',
-  title: 'Notre futur effectif running / trail',
-  lead: 'Une personne intéressée n’est pas un membre : seul le statut « Membre confirmé » vaut engagement. Les fiches seront complétées avec l’accord de chaque athlète.',
+  eyebrow: 'Les coureurs',
+  title: 'Le Team 2027',
+  lead: 'Deux coureurs de niveau national, deux de niveau régional, un effectif qui reste ouvert. Seul le statut « Membre confirmé » vaut adhésion ; chaque fiche est complétée avec l’accord du coureur.',
   openSlot: {
     title: 'Profil à venir',
-    text: 'Le recrutement continue : route, trail court, trail long, piste.',
+    text: 'Le Team reste ouvert : route, trail court, trail long, piste. Objectif de départ : 4 à 7 coureurs.',
   },
 };
 
 export const ambitions = {
   eyebrow: 'Notre vision sportive',
-  title: 'Un collectif régional, étape par étape',
+  title: 'Du Team 2027 à la suite, étape par étape',
   steps: [
-    { phase: 'Court terme', name: 'Recruter', text: 'Constituer un effectif humainement cohérent, fixer des objectifs individuels et collectifs, courir en régional.' },
-    { phase: 'Moyen terme', name: 'Structurer', text: 'Tenues identitaires, contenus réguliers, partenaire référent dans un premier temps.' },
-    { phase: 'Ambition', name: 'Progresser', text: 'Des compétitions plus exigeantes, au rythme du niveau réel des athlètes et des moyens réunis, tout en prenant plaisir entre potes.' },
+    { phase: 'Automne 2026', name: 'Lancer le Team', text: 'Réunir les premiers coureurs, encaisser les adhésions, choisir les tenues, trouver le partenaire titre.' },
+    { phase: 'Saison 2027', name: 'Faire nos preuves', text: 'Courir en régional et sur des épreuves plus exigeantes selon le niveau de chacun, raconter la saison en contenus.' },
+    { phase: 'Fin 2027', name: 'Faire le bilan', text: 'Bilan sportif et financier partagé avec le partenaire, puis décision : rester en Team ou étudier un club FFA pour 2028.' },
   ],
   axes: 'Axes de recrutement, selon les profils qui rejoindront le collectif : piste, route, trail court, trail long. Aucune de ces spécialités n’est présentée comme déjà couverte.',
 };
 
 export const partenariat = {
   eyebrow: 'La proposition',
-  title: 'Trois axes pour construire ensemble',
+  title: 'Partenaire titre du Team : trois axes',
+  lead: 'Être partenaire titre, c’est accompagner le Team sur trois terrains : ce que portent les coureurs, ce qui leur permet de courir, et ce que nous créons ensemble.',
   axes: [
     { id: 'textile', n: 'Axe 1', name: 'Tenues et équipement' },
     { id: 'financement', n: 'Axe 2', name: 'Soutien financier' },
@@ -156,11 +190,12 @@ export const partenariat = {
 export const textile = {
   eyebrow: 'Axe 1 · Tenues et équipement',
   title: 'Construire notre identité textile',
-  lead: 'Une collection reconnaissable, dans la continuité des maillots cyclistes. Un premier tee-shirt SMAL & CO est déjà porté en course ; le reste de la collection est à créer.',
+  lead: 'Une collection reconnaissable, dans la continuité des maillots cyclistes. Un premier tee-shirt SMAL & CO est déjà porté en course. Les packs du Team, financés en premier lieu par les adhésions, restent à créer.',
   items: [
     { name: 'Tee-shirt de course', state: 'Premier modèle porté' },
-    { name: 'Débardeur de course', state: 'À créer' },
-    { name: 'Veste adaptée', state: 'À créer' },
+    { name: 'Pack maillot + veste', state: 'À créer' },
+    { name: 'Pack maillot + débardeur', state: 'À créer' },
+    { name: 'Pack maillot + short', state: 'À créer' },
     { name: 'Accessoires, dont casquette', state: 'À créer' },
   ],
   role:
@@ -213,9 +248,10 @@ export const fonctionnement = {
   smal: {
     title: 'SMAL & CO s’engage',
     items: [
-      'À affecter le soutien aux dépenses du pôle running / trail',
+      'À affecter le soutien aux seules dépenses du Team Running / Trail',
       'À valoriser Run Aventure sur ses supports, selon l’accord',
       'À intégrer le magasin à son réseau de partenaires',
+      'À partager un bilan sportif et financier en fin de saison',
     ],
   },
   run: {
@@ -227,10 +263,12 @@ export const fonctionnement = {
     ],
   },
   terms: [
-    { k: 'Durée', v: '1 an', state: 'Proposition' },
-    { k: 'Périmètre', v: 'Pôle running / trail', state: 'Proposition' },
+    { k: 'Durée', v: '1 an, la saison test 2027', state: 'Proposition' },
+    { k: 'Périmètre', v: 'Team Running / Trail', state: 'Proposition' },
+    { k: 'Statut', v: 'Partenaire titre du Team', state: 'Proposition' },
     { k: 'Exclusivité', v: 'Piste, route, trail, ultra', state: 'À négocier' },
-    { k: 'Renouvellement', v: 'Échange constant et disponibilité de l’association', state: 'À négocier' },
+    { k: 'Renouvellement', v: 'Après le bilan de fin 2027', state: 'À négocier' },
+    { k: 'Nom du Team', v: 'Association du nom du partenaire [À DISCUTER]', state: 'À négocier' },
   ],
   scope: 'Le cyclisme reste accompagné par Hobby Cycles : le périmètre proposé à Run Aventure est strictement running / trail.',
 };

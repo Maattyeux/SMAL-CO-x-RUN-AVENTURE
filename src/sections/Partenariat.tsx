@@ -6,7 +6,9 @@ import { scrollToId } from '../lib/scroll';
 function Axes() {
   return (
     <div className="wrap section-tight">
-      <SectionHeader eyebrow={partenariat.eyebrow} title={partenariat.title} id="partenariat-title" />
+      <SectionHeader eyebrow={partenariat.eyebrow} title={partenariat.title} id="partenariat-title">
+        <p>{partenariat.lead}</p>
+      </SectionHeader>
       <ol className="axes" data-stagger>
         {partenariat.axes.map((a) => (
           <li key={a.id}>
