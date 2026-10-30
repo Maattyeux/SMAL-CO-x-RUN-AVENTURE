@@ -49,13 +49,18 @@ export function SectionHeader({ eyebrow, title, children, id, align = 'start' }:
 }
 
 /**
- * Logo Run Aventure sur plaque claire : le logo (bleu pétrole et vert)
- * n'est pas lisible directement sur le fond sombre du site.
+ * Logo Run Aventure sans fond, version pour fond sombre :
+ * le bleu pétrole du logo est passé en blanc, le vert est conservé.
  */
 export function RALogo({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg'; className?: string }) {
   return (
-    <span className={`ra-plate ra-plate--${size} ${className}`}>
-      <img src="assets/logo-run-aventure-full.webp" alt="Run Aventure" width={600} height={264} loading="lazy" />
-    </span>
+    <img
+      className={`ra-logo ra-logo--${size} ${className}`}
+      src="assets/logo-run-aventure-light.webp"
+      alt="Run Aventure"
+      width={593}
+      height={116}
+      loading="lazy"
+    />
   );
 }

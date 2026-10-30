@@ -43,16 +43,6 @@ export function Contact() {
           <Todo text={contact.next} />
         </p>
 
-        <div className="person" data-reveal>
-          <p className="person__name">{contact.person.name}</p>
-          <p className="person__role">{contact.person.role}</p>
-          <p className="person__lines">
-            <a href={contact.person.tel}>{contact.person.phone}</a>
-            <span aria-hidden="true">·</span>
-            <a href={`mailto:${contact.person.email}`}>{contact.person.email}</a>
-          </p>
-        </div>
-
         <ul className="bubbles" data-stagger>
           {contact.channels.map((c) => {
             const external = c.kind !== 'mail';

@@ -276,8 +276,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 500px at 15% 100%, rgba(68, 10, 116, 0.85), transparent 70%),
-    radial-gradient(800px 520px at 100% 85%, rgba(0, 85, 106, 0.7), transparent 70%),
+    linear-gradient(90deg, rgba(17, 18, 21, 0.75) 0%, rgba(17, 18, 21, 0.25) 60%, rgba(17, 18, 21, 0) 100%),
     linear-gradient(180deg, rgba(17, 18, 21, 0.72) 0%, rgba(17, 18, 21, 0.5) 40%, rgba(17, 18, 21, 0.94) 100%);
 }
 
@@ -318,10 +317,7 @@
 }
 
 .hero__line--b > span {
-  background: linear-gradient(180deg, #fff 10%, var(--ra-green-2) 60%, var(--ra-green));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--head);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1321,63 +1317,6 @@
  * le partenaire (logo, valeurs, proposition). Le violet reste SMAL & CO.
  * ========================================================= */
 
-/* Logo sur plaque claire (le logo n'est pas lisible sur fond sombre) */
-.ra-plate {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(153, 195, 46, 0.5), 0 10px 30px -12px rgba(0, 85, 106, 0.8);
-}
-
-.ra-plate img {
-  display: block;
-  width: auto;
-}
-
-.ra-plate--sm {
-  padding: 4px 8px;
-  border-radius: 8px;
-}
-.ra-plate--sm img {
-  height: 30px;
-}
-
-.ra-plate--md {
-  padding: 8px 14px;
-}
-.ra-plate--md img {
-  height: clamp(40px, 32px + 1.5vw, 56px);
-}
-
-.ra-plate--lg {
-  padding: 14px 22px;
-  border-radius: 14px;
-}
-.ra-plate--lg img {
-  height: clamp(64px, 50px + 3vw, 96px);
-}
-
-.hero__for {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1rem;
-  font-size: var(--t-xs);
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ra-green-2);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero__for {
-    animation: fade-up 1000ms var(--ease-out) 50ms both;
-  }
-}
-
 /* Photo du duo, au-dessus des fiches coureurs */
 .team__duo {
   margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
@@ -1559,13 +1498,6 @@
   color: var(--ra-green);
 }
 
-.model__logo--plate {
-  height: clamp(3.5rem, 2.8rem + 2.4vw, 5.25rem);
-  padding: 8px 14px;
-  background: #fff;
-  border-radius: 12px;
-  box-sizing: content-box;
-}
 
 /* Contact */
 .contact__logos {
@@ -1582,50 +1514,11 @@
   color: var(--ra-green-2);
 }
 
-.person {
-  display: grid;
-  justify-items: center;
-  gap: 0.3rem;
-  margin-top: 0.5rem;
-  padding: 1.5rem 2rem;
-  background: var(--ra-glow), rgba(26, 27, 34, 0.9);
-  border: 1px solid rgba(153, 195, 46, 0.35);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(10px);
-}
 
-.person__name {
-  font-family: var(--f-display);
-  font-size: var(--t-xl);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--head);
-}
 
-.person__role {
-  font-size: var(--t-sm);
-  color: var(--muted);
-}
 
-.person__lines {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.25rem 0.75rem;
-  margin-top: 0.4rem;
-  font-weight: 600;
-}
 
-.person__lines a {
-  color: var(--ra-green-2);
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
 
-.person__lines a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 
 .footer__logos {
   display: flex;
@@ -1639,4 +1532,82 @@
 /* Fiches coureurs : format portrait pour garder les visages */
 .athlete__visual {
   aspect-ratio: 4 / 5;
+}
+
+
+/* Logo Run Aventure sans fond (version claire pour fond sombre) */
+.ra-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+.ra-logo--sm {
+  height: 26px;
+}
+.ra-logo--md {
+  height: clamp(30px, 24px + 1.2vw, 42px);
+}
+.ra-logo--lg {
+  height: clamp(44px, 34px + 2vw, 64px);
+}
+
+.nav__partner.ra-logo {
+  height: 24px;
+}
+
+.model__logo--ra {
+  height: clamp(2.5rem, 2rem + 1.6vw, 3.75rem);
+}
+
+/* Héros épuré : photo, logos, titre blanc. Une seule couleur d'appui. */
+.hero__lockup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.hero__smal {
+  height: clamp(26px, 20px + 1.1vw, 36px);
+  width: auto;
+}
+
+.hero__lockup-x {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero__eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero__line--x {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero .btn--primary {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.hero .btn--primary:hover {
+  background: var(--ra-green);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__lockup {
+    animation: fade-up 1000ms var(--ease-out) 50ms both;
+  }
+}
+
+/* Barre étroite : le logo partenaire est déjà dans le héros */
+@media (max-width: 1080px) {
+  .nav__partner.ra-logo,
+  .nav__x {
+    display: none;
+  }
 }

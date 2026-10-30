@@ -23,7 +23,7 @@ export function Proposition() {
                 </span>
                 <span className="model__partner">
                   <img
-                    className={`model__logo ${m.logo.mono ? 'model__logo--mono' : 'model__logo--plate'}`}
+                    className={`model__logo ${m.logo.mono ? 'model__logo--mono' : 'model__logo--ra'}`}
                     src={m.logo.src}
                     alt={m.partner}
                     width={m.logo.w}

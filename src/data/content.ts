@@ -190,7 +190,7 @@ export const proposition = {
       pole: 'Running / trail',
       partner: 'Run Aventure',
       state: 'Proposition',
-      logo: { src: 'assets/logo-run-aventure-full.webp', w: 600, h: 264, mono: false },
+      logo: { src: 'assets/logo-run-aventure-light.webp', w: 593, h: 116, mono: false },
     },
   ],
   axes: [
@@ -205,7 +205,6 @@ export const proposition = {
 export const contact = {
   badge: 'Nous contacter',
   title: 'Rencontrons-nous pour en parler.',
-  person: { name: 'Matthieu Bruno', role: 'Cofondateur et président de SMAL & CO', phone: '07 67 52 59 18', tel: 'tel:+33767525918', email: 'matthieu.bruno29@gmail.com' },
   next: 'Un rendez-vous de 30 à 45 minutes au magasin, date [À FIXER].',
   channels: [
     { kind: 'mail', label: 'Notre mail', value: 'smal.partner@gmail.com', href: 'mailto:smal.partner@gmail.com' },

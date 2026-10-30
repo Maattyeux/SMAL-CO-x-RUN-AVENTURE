@@ -17,10 +17,11 @@ export function Hero() {
       </div>
 
       <div className="hero__content wrap">
-        <p className="hero__for">
-          <span>Dossier préparé pour</span>
+        <div className="hero__lockup" aria-label="SMAL & CO et Run Aventure">
+          <img src="assets/logo-smal-co.webp" alt="SMAL & CO" width={682} height={125} className="hero__smal" />
+          <span className="hero__lockup-x" aria-hidden="true">×</span>
           <RALogo size="md" />
-        </p>
+        </div>
         <p className="eyebrow hero__eyebrow">{hero.eyebrow}</p>
         <h1 id="hero-title" className="hero__title">
           <span className="hero__line">
@@ -36,7 +37,6 @@ export function Hero() {
         </h1>
         <div className="hero__foot">
           <p className="hero__lead">{hero.lead}</p>
-          <p className="signature">{site.signature}</p>
         </div>
         <div className="hero__actions">
           <a
