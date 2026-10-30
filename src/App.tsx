@@ -1,21 +1,18 @@
 import { Nav } from './components/Nav';
 import { useReveal } from './hooks/useReveal';
 import { Ambitions } from './sections/Ambitions';
-import { Benefices, Fonctionnement } from './sections/Benefices';
 import { Contact } from './sections/Contact';
 import { Cyclisme } from './sections/Cyclisme';
-import { Effectif } from './sections/Effectif';
 import { Hero } from './sections/Hero';
-import { Identite } from './sections/Identite';
-import { Partenariat } from './sections/Partenariat';
-import { Preuves } from './sections/Preuves';
-import { Running } from './sections/Running';
+import { Histoire } from './sections/Histoire';
+import { Proposition } from './sections/Proposition';
 import { Team } from './sections/Team';
+import { Valeurs } from './sections/Valeurs';
 
 /**
- * Parcours narratif :
- * identité → cyclisme (socle) → preuves → running/trail (ambition)
- * → Team 2026/2027 (le projet, le sponsor titre) → effectif → vision → les 3 axes → bénéfices → fonctionnement → contact.
+ * Récit en trois temps, puis la proposition :
+ * histoire → cyclisme (la preuve) → TEAM 2027 et ses ambitions → valeurs partagées
+ * avec Run Aventure → sponsor titre → contact.
  */
 export function App() {
   useReveal();
@@ -28,16 +25,12 @@ export function App() {
       <Nav />
       <main id="contenu">
         <Hero />
-        <Identite />
+        <Histoire />
         <Cyclisme />
-        <Preuves />
-        <Running />
         <Team />
-        <Effectif />
         <Ambitions />
-        <Partenariat />
-        <Benefices />
-        <Fonctionnement />
+        <Valeurs />
+        <Proposition />
         <Contact />
       </main>
     </>

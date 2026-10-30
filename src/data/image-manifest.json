@@ -1,4 +1,18 @@
 {
+  "hero-guerledan": {
+    "w": 5351,
+    "h": 3229,
+    "variants": [
+      {
+        "w": 960,
+        "file": "img/hero-guerledan-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "img/hero-guerledan-1920.webp"
+      }
+    ]
+  },
   "hobby": {
     "w": 1920,
     "h": 1440,
@@ -290,6 +304,144 @@
       {
         "w": 1920,
         "file": "img/team-wall-1920.webp"
+      }
+    ]
+  },
+  "histoire-portrait": {
+    "w": 1000,
+    "h": 1697,
+    "variants": [
+      {
+        "w": 1000,
+        "file": "assets/histoire-portrait.webp"
+      }
+    ]
+  },
+  "histoire-cyclistes": {
+    "w": 1200,
+    "h": 675,
+    "variants": [
+      {
+        "w": 1200,
+        "file": "assets/histoire-cyclistes.webp"
+      }
+    ]
+  },
+  "cyclisme-groupe": {
+    "w": 1920,
+    "h": 1281,
+    "variants": [
+      {
+        "w": 960,
+        "file": "assets/cyclisme-groupe-960.webp"
+      },
+      {
+        "w": 1920,
+        "file": "assets/cyclisme-groupe.webp"
+      }
+    ]
+  },
+  "team-guerledan": {
+    "w": 1200,
+    "h": 724,
+    "variants": [
+      {
+        "w": 1200,
+        "file": "assets/team-guerledan.webp"
+      }
+    ]
+  },
+  "athlete-moran-bars": {
+    "w": 1080,
+    "h": 1350,
+    "variants": [
+      {
+        "w": 500,
+        "file": "assets/athlete-moran-bars-500.webp"
+      },
+      {
+        "w": 1000,
+        "file": "assets/athlete-moran-bars-1000.webp"
+      }
+    ]
+  },
+  "athlete-lucas-tanne": {
+    "w": 1206,
+    "h": 1507,
+    "variants": [
+      {
+        "w": 500,
+        "file": "assets/athlete-lucas-tanne-500.webp"
+      },
+      {
+        "w": 1000,
+        "file": "assets/athlete-lucas-tanne-1000.webp"
+      }
+    ]
+  },
+  "athlete-lucas-marrec": {
+    "w": 450,
+    "h": 562,
+    "variants": [
+      {
+        "w": 450,
+        "file": "assets/athlete-lucas-marrec-450.webp"
+      }
+    ]
+  },
+  "athlete-ewen-premel": {
+    "w": 2666,
+    "h": 3333,
+    "variants": [
+      {
+        "w": 500,
+        "file": "assets/athlete-ewen-premel-500.webp"
+      },
+      {
+        "w": 1000,
+        "file": "assets/athlete-ewen-premel-1000.webp"
+      }
+    ]
+  },
+  "athlete-mael-bruno": {
+    "w": 3376,
+    "h": 4220,
+    "variants": [
+      {
+        "w": 500,
+        "file": "assets/athlete-mael-bruno-500.webp"
+      },
+      {
+        "w": 1000,
+        "file": "assets/athlete-mael-bruno-1000.webp"
+      }
+    ]
+  },
+  "team-duo": {
+    "w": 1179,
+    "h": 786,
+    "variants": [
+      {
+        "w": 800,
+        "file": "assets/team-duo-800.webp"
+      },
+      {
+        "w": 1179,
+        "file": "assets/team-duo-1179.webp"
+      }
+    ]
+  },
+  "proposition-chaussures": {
+    "w": 3376,
+    "h": 6000,
+    "variants": [
+      {
+        "w": 700,
+        "file": "assets/proposition-chaussures-700.webp"
+      },
+      {
+        "w": 1400,
+        "file": "assets/proposition-chaussures-1400.webp"
       }
     ]
   }

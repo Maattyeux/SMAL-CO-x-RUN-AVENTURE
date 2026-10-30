@@ -2,15 +2,13 @@ import { useEffect, useState } from 'react';
 
 /**
  * Renvoie l'id de la section visible au centre de l'écran.
- * Chaque section de navigation porte `data-nav="<id>"`.
+ * Chaque section de navigation porte `data-nav="<id>"` (plusieurs sections peuvent partager un id).
  */
 export function useActiveSection(ids: readonly string[]): string {
   const [active, setActive] = useState('');
 
   useEffect(() => {
-    const els = ids
-      .map((id) => document.querySelector<HTMLElement>(`[data-nav="${id}"]`))
-      .filter((el): el is HTMLElement => el !== null);
+    const els = ids.flatMap((id) => Array.from(document.querySelectorAll<HTMLElement>(`[data-nav="${id}"]`)));
 
     const io = new IntersectionObserver(
       (entries) => {

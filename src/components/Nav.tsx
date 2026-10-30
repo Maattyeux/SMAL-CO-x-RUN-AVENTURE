@@ -1,3 +1,4 @@
+import { RALogo } from './ui';
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { nav } from '../data/content';
 import { useActiveSection } from '../hooks/useActiveSection';
@@ -55,9 +56,9 @@ export function Nav() {
     <header className={`nav ${solid ? 'nav--solid' : ''} ${open ? 'nav--open' : ''}`}>
       <div className="nav__inner">
         <a href="#accueil" className="nav__brand" onClick={(e) => go(e, 'accueil')}>
-          SMAL <span>&amp; CO</span>
+          <img className="nav__logo" src="assets/logo-smal-co.webp" alt="SMAL & CO" width={682} height={125} />
           <span className="nav__x" aria-hidden="true">×</span>
-          <span className="nav__partner">Run Aventure</span>
+          <RALogo size="sm" className="nav__partner" />
         </a>
 
         <button

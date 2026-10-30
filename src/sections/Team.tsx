@@ -1,11 +1,66 @@
 import { Photo } from '../components/Photo';
 import { ScrollText } from '../components/ScrollText';
-import { SectionHeader } from '../components/ui';
-import { team } from '../data/content';
+import { SectionHeader, Todo } from '../components/ui';
+import { STATUS_LABEL, athletes, type Athlete } from '../data/athletes';
+import { effectif, team } from '../data/content';
+
+/** Fiche coureur : photo si disponible, sinon monogramme typographique. */
+function AthleteCard({ a }: { a: Athlete }) {
+  return (
+    <article className="athlete" aria-labelledby={`athlete-${a.id}`}>
+      <div className="athlete__visual" aria-hidden={a.photo ? undefined : 'true'}>
+        {a.photo ? (
+          <Photo name={a.photo} alt={`${a.firstName} ${a.lastName}`} sizes="(min-width: 900px) 22vw, 90vw" />
+        ) : (
+          <span className="athlete__mono">
+            {a.firstName[0]}
+            {a.lastName[0]}
+          </span>
+        )}
+        <span className="status">{STATUS_LABEL[a.status]}</span>
+      </div>
+      <h4 id={`athlete-${a.id}`} className="athlete__name">
+        {a.firstName} <span>{a.lastName}</span>
+      </h4>
+      <dl className="athlete__facts">
+        <div>
+          <dt>Niveau</dt>
+          <dd>
+            <Todo text={a.level} />
+          </dd>
+        </div>
+        <div>
+          <dt>Discipline</dt>
+          <dd>{a.disciplines}</dd>
+        </div>
+        <div>
+          <dt>Palmarès</dt>
+          <dd>
+            <ul>
+              {a.results.map((r) => (
+                <li key={r}>
+                  <Todo text={r} />
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+        {a.goal && (
+          <div>
+            <dt>Objectif</dt>
+            <dd>
+              <Todo text={a.goal} />
+            </dd>
+          </div>
+        )}
+      </dl>
+    </article>
+  );
+}
 
 /**
- * Saison 2026/2027 : le projet de Team Running / Trail
- * (collectif indépendant, pas de club FFA) et la place de sponsor titre.
+ * Saison 2026/2027 : le TEAM Running / Trail (collectif indépendant,
+ * pas de club FFA), son fonctionnement et ses coureurs.
  */
 export function Team() {
   return (
@@ -19,57 +74,52 @@ export function Team() {
         <figure className="team__media" data-reveal="mask">
           <div>
             <Photo
-              name="run-bw-group"
-              alt="Une dizaine de coureurs réunis après une course, l'un d'eux brandit un tee-shirt SMAL & CO"
+              name="team-guerledan"
+              alt="Cinq membres de SMAL & CO en tee-shirts de l'association, souriants côte à côte sur le site d'une course à Guerlédan"
               sizes="(min-width: 900px) 42vw, 92vw"
             />
           </div>
-          <figcaption>Le noyau du futur Team, après une course</figcaption>
         </figure>
       </div>
 
       <div className="wrap">
-        <ul className="principles" data-stagger aria-label="Les principes du Team">
-          {team.principles.map((p) => (
-            <li key={p.name} className="principle">
-              <h3 className="principle__name">{p.name}</h3>
-              <p className="principle__text">{p.text}</p>
+        <ScrollText as="blockquote" className="team__why" text={team.why} />
+
+        <ol className="cards cards--4" data-stagger aria-label="Le fonctionnement du TEAM">
+          {team.principles.map((p, i) => (
+            <li key={p.name} className="card">
+              <span className="card__n">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="card__name">{p.name}</h3>
+              <p className="card__text">
+                <Todo text={p.text} />
+              </p>
             </li>
           ))}
-        </ul>
-
-        <p className="note team__why" data-reveal>
-          {team.why}
-        </p>
+        </ol>
       </div>
 
-      <div className="wrap team__model" aria-labelledby="model-title">
-        <h3 id="model-title" className="h3-display" data-reveal>
-          <span className="eyebrow">Le modèle SMAL &amp; CO</span>
-          {team.modelTitle}
-        </h3>
-        <div className="model" data-stagger role="table" aria-label="Partenaire principal par discipline">
-          <div className="model__row model__row--head" role="row">
-            <span role="columnheader">Pôle</span>
-            <span role="columnheader">Structure</span>
-            <span role="columnheader">Partenaire titre</span>
+      <div className="wrap team__athletes" aria-labelledby="athletes-title">
+        <figure className="team__duo" data-reveal="mask">
+          <div>
+            <Photo name="team-duo" alt={effectif.duoAlt} sizes="(min-width: 1200px) 1200px, 100vw" focus="50% 40%" />
           </div>
-          {team.model.map((m) => (
-            <div key={m.pole} className={`model__row ${m.state === 'Proposition' ? 'model__row--open' : ''}`} role="row">
-              <span className="model__pole" role="cell">
-                {m.pole}
-              </span>
-              <span className="model__structure" role="cell">
-                {m.structure}
-              </span>
-              <span className="model__partner" role="cell">
-                {m.partner}
-                <span className={`status ${m.state === 'Proposition' ? 'status--etude' : 'status--confirme'}`}>{m.state}</span>
-              </span>
-            </div>
+        </figure>
+        <header className="sub-head">
+          <p className="eyebrow" data-reveal>
+            {effectif.eyebrow}
+          </p>
+          <h3 id="athletes-title" className="h3" data-reveal="title">
+            <span>{effectif.title}</span>
+          </h3>
+          <p className="lead" data-reveal>
+            {effectif.lead}
+          </p>
+        </header>
+        <div className="athletes" data-stagger>
+          {athletes.map((a) => (
+            <AthleteCard key={a.id} a={a} />
           ))}
         </div>
-        <ScrollText className="team__sponsor" text={team.sponsor} />
       </div>
     </section>
   );

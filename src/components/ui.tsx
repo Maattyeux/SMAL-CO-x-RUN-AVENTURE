@@ -1,4 +1,4 @@
-import { Fragment, useState, type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 
 /**
  * Affiche un texte en mettant en évidence (doré) les champs à compléter
@@ -48,23 +48,14 @@ export function SectionHeader({ eyebrow, title, children, id, align = 'start' }:
   );
 }
 
-/** Bouton « Copier » : fonctionne même si mailto / tel sont bloqués. */
-export function CopyButton({ value, label }: { value: string; label: string }) {
-  const [state, setState] = useState<'idle' | 'ok' | 'ko'>('idle');
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(value);
-      setState('ok');
-    } catch {
-      setState('ko');
-    }
-    window.setTimeout(() => setState('idle'), 2200);
-  };
-
+/**
+ * Logo Run Aventure sur plaque claire : le logo (bleu pétrole et vert)
+ * n'est pas lisible directement sur le fond sombre du site.
+ */
+export function RALogo({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg'; className?: string }) {
   return (
-    <button type="button" className="copy" onClick={copy} aria-label={`Copier ${label}`}>
-      <span aria-live="polite">{state === 'ok' ? 'Copié' : state === 'ko' ? 'Sélectionnez le texte' : 'Copier'}</span>
-    </button>
+    <span className={`ra-plate ra-plate--${size} ${className}`}>
+      <img src="assets/logo-run-aventure-full.webp" alt="Run Aventure" width={600} height={264} loading="lazy" />
+    </span>
   );
 }

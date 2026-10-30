@@ -20,9 +20,10 @@ export function Cyclisme() {
       <div className="cover">
         <Parallax strength={0.06} className="cover__media">
           <Photo
-            name="team-studio"
-            alt="Huit coureurs de l'équipe cycliste SMAL & CO alignés en maillot violet, sous un éclairage violet"
+            name="cyclisme-groupe"
+            alt="Sept coureurs SMAL & CO en maillot violet roulent de front sur une petite route de campagne"
             sizes="100vw"
+            focus="55% 55%"
           />
         </Parallax>
         <div className="cover__scrim" />
@@ -81,7 +82,7 @@ export function Cyclisme() {
           <p className="eyebrow" data-reveal>
             {hobby.eyebrow}
           </p>
-          <h3 id="hobby-title" className="h2" data-reveal="title">
+          <h3 id="hobby-title" className="h3" data-reveal="title">
             <span>{hobby.title}</span>
           </h3>
           <ul className="checklist" data-stagger>
@@ -89,7 +90,7 @@ export function Cyclisme() {
               <li key={p}>{p}</li>
             ))}
           </ul>
-          <blockquote className="callout" data-reveal>
+          <blockquote className="callout callout--quote" data-reveal>
             {hobby.model}
           </blockquote>
         </div>

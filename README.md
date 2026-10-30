@@ -32,7 +32,7 @@ Les chemins sont relatifs, le site fonctionne aussi dans un sous-dossier.
 | Quoi | Où |
 |---|---|
 | Tous les textes, chiffres, coordonnées | `src/data/content.ts` |
-| Effectif running / trail (statuts, résultats, objectifs) | `src/data/athletes.ts` |
+| Effectif running / trail (niveau, palmarès, objectif, photo) | `src/data/athletes.ts` |
 | Photos | déposer le JPEG dans `assets-src/`, lancer `npm run images`, l'appeler par son nom dans `<Photo name="…">` |
 
 Un texte entre crochets (`[À DÉFINIR]`) s'affiche en doré : c'est une information à compléter.

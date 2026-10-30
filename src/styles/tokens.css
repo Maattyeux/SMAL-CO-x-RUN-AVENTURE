@@ -1,46 +1,59 @@
 /*
- * Système visuel SMAL & CO
- * Mise en page : éditorial sombre, photographie plein cadre alternée avec
- * des blocs de texte sur grille 12 colonnes ; le violet du maillot sert
- * d'unique accent, le doré est réservé aux champs « à compléter ».
+ * Système visuel SMAL & CO, aligné sur le site officiel (smal-co.netlify.app)
+ * Fond anthracite, violet du maillot comme unique accent, titres Outfit
+ * en casse de phrase terminés par un point, libellés Inter en capitales.
+ * Le doré est réservé aux champs « à compléter ».
  * Identité volontairement sombre (un seul thème, choisi) : couleurs explicites.
  */
 :root {
   color-scheme: dark;
 
   /* Couleurs */
-  --ink: #0b0a14;          /* fond principal, noir bleuté */
-  --ink-2: #131128;        /* fond de section alterné */
-  --ink-3: #1d1a3c;        /* surfaces (dossards, tableaux) */
-  --line: rgba(165, 143, 255, 0.18);
-  --fg: #f3f1fa;           /* texte principal */
-  --muted: #b3aed2;        /* texte secondaire (contraste AA sur --ink) */
-  --dim: #5d587f;          /* état « pas encore lu » du texte progressif */
-  --violet: #7b5cff;       /* violet du maillot */
-  --violet-2: #a58fff;     /* violet clair, sur-titres et chiffres */
-  --violet-deep: #2b1d74;
-  --gold: #d8b56b;         /* uniquement : informations à compléter */
+  --ink: #111215;          /* fond principal */
+  --ink-2: #14151a;        /* fond de section alterné */
+  --ink-3: #1a1b22;        /* surfaces (cartes) */
+  --line: rgba(255, 255, 255, 0.08);
+  --line-violet: rgba(168, 85, 247, 0.25);
+  --fg: #e2e8f0;           /* texte principal */
+  --head: #ffffff;         /* titres */
+  --muted: #cbd5e1;        /* texte secondaire */
+  --dim: #4a4d5c;          /* état « pas encore lu » du texte progressif */
+  --violet: #440a74;       /* violet du maillot */
+  --violet-2: #7a3ee0;     /* violet vif */
+  --violet-3: #b794ff;     /* violet clair, chiffres et dates */
+  --eyebrow: #a855f7;      /* libellés au-dessus des titres */
+  --gold: #d9b25b;
+
+  /* Couleurs de l'enseigne Run Aventure (relevées sur son logo) :
+     elles signalent tout ce qui concerne le partenaire. */
+  --ra-green: #99c32e;     /* vert « AVENTURE » */
+  --ra-green-2: #c3e27a;   /* vert clair, textes sur fond sombre */
+  --ra-teal: #00556a;      /* bleu pétrole « RUN » */
+  --ra-teal-2: #0b7f99;    /* bleu pétrole éclairci, reflets */
+  --ra-glow: radial-gradient(500px 260px at 70% 0%, rgba(0, 85, 106, 0.55), transparent 70%);         /* uniquement : informations à compléter */
 
   /* Typographie */
-  --f-display: 'Oswald', 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
-  --f-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --f-mono: 'DM Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --f-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --t-xs: 0.8125rem;
+  --t-xs: 0.8rem;
   --t-sm: 0.9375rem;
   --t-md: 1.0625rem;
-  --t-lg: clamp(1.1875rem, 1rem + 0.6vw, 1.4375rem);
-  --t-xl: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
-  --t-h2: clamp(2.25rem, 1.4rem + 3.6vw, 4.75rem);
-  --t-display: clamp(2.6rem, 1.2rem + 5.4vw, 7rem);
-  --t-hero: clamp(3.2rem, 1rem + 8.2vw, 9.75rem);
+  --t-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --t-xl: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+  --t-h2: clamp(2.5rem, 1.6rem + 4vw, 6.5rem);
+  --t-h3: clamp(2rem, 1.4rem + 2.6vw, 3.75rem);
+  --t-hero: clamp(3.4rem, 1rem + 10vw, 11.5rem);
 
   /* Espacements et formes */
   --gutter: max(16px, env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, env(safe-area-inset-right, 0px));
-  --maxw: 1360px;
+  --maxw: 1200px;
   --section: clamp(5rem, 3rem + 8vw, 10rem);
-  --radius: 4px;
+  --radius: 18px;
+  --radius-lg: 24px;
+  --lift: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --glow: radial-gradient(500px 260px at 30% 0%, rgba(122, 62, 224, 0.35), transparent 70%);
 
   /* Mouvement */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

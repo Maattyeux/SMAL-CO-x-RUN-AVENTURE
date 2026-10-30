@@ -1,11 +1,12 @@
 import { Parallax } from '../components/Parallax';
 import { Photo } from '../components/Photo';
-import { SectionHeader } from '../components/ui';
+import { Todo } from '../components/ui';
 import { ambitions } from '../data/content';
 
+/** Ambitions 2027 du TEAM : chaque projet porte un statut visible. */
 export function Ambitions() {
   return (
-    <section className="section ambitions" aria-labelledby="ambitions-title">
+    <section id="ambitions" data-nav="team" className="section ambitions" aria-labelledby="ambitions-title">
       <div className="wrap ambitions__grid">
         <div className="ambitions__media" data-reveal="mask">
           <Parallax strength={0.08}>
@@ -17,19 +18,31 @@ export function Ambitions() {
           </Parallax>
         </div>
         <div className="ambitions__body">
-          <SectionHeader id="ambitions-title" eyebrow={ambitions.eyebrow} title={ambitions.title} />
-          <ol className="steps" data-stagger>
-            {ambitions.steps.map((s) => (
-              <li key={s.name} className="step">
-                <span className="step__phase">{s.phase}</span>
-                <h3 className="step__name">{s.name}</h3>
-                <p className="step__text">{s.text}</p>
+          <header className="sub-head">
+            <p className="eyebrow" data-reveal>
+              {ambitions.eyebrow}
+            </p>
+            <h3 id="ambitions-title" className="h3" data-reveal="title">
+              <span>{ambitions.title}</span>
+            </h3>
+            <p className="note" data-reveal>
+              {ambitions.note}
+            </p>
+          </header>
+          <ol className="ambition-list" data-stagger>
+            {ambitions.items.map((a, i) => (
+              <li key={a.name} className="ambition">
+                <span className="card__n">{String(i + 1).padStart(2, '0')}</span>
+                <div className="ambition__body">
+                  <h4 className="ambition__name">{a.name}</h4>
+                  <p className="ambition__text">
+                    <Todo text={a.text} />
+                  </p>
+                </div>
+                <span className={`tag ${a.status === 'Projet' ? 'tag--projet' : 'tag--etude'}`}>{a.status}</span>
               </li>
             ))}
           </ol>
-          <p className="note" data-reveal>
-            {ambitions.axes}
-          </p>
         </div>
       </div>
     </section>

@@ -1,21 +1,26 @@
 import { Photo } from '../components/Photo';
-import { hero, site } from '../data/content';
+import { footer, hero, site } from '../data/content';
 import { scrollToId } from '../lib/scroll';
+import { RALogo } from '../components/ui';
 
 export function Hero() {
   return (
     <section id="accueil" className="hero" aria-labelledby="hero-title">
       <div className="hero__media">
         <Photo
-          name="run-group"
+          name="hero-guerledan"
           priority
-          alt="Quatre membres de SMAL & CO posent ensemble avant une course, l'un porte le tee-shirt de course SMAL & CO et le dossard 310"
+          alt="Cinq membres de SMAL & CO en tee-shirts de l'association, souriants côte à côte sur le site d'une course à Guerlédan"
           focus="50% 30%"
         />
         <div className="hero__scrim" />
       </div>
 
       <div className="hero__content wrap">
+        <p className="hero__for">
+          <span>Dossier préparé pour</span>
+          <RALogo size="md" />
+        </p>
         <p className="eyebrow hero__eyebrow">{hero.eyebrow}</p>
         <h1 id="hero-title" className="hero__title">
           <span className="hero__line">
@@ -36,10 +41,10 @@ export function Hero() {
         <div className="hero__actions">
           <a
             className="btn btn--primary"
-            href="#identite"
+            href="#histoire"
             onClick={(e) => {
               e.preventDefault();
-              scrollToId('identite');
+              scrollToId('histoire');
             }}
           >
             {hero.ctaPrimary}
@@ -59,7 +64,19 @@ export function Hero() {
       </div>
 
       <p className="hero__meta wrap">
-        <span>Brest · Bretagne</span>
+        <span className="hero__place">
+          Brest · Bretagne ·{' '}
+          <span className="hero__credit">
+            <em>crédit photo</em>{' '}
+            <a href={footer.photo.href} target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM17.5 6.5h0" />
+              </svg>
+              {footer.photo.handle}
+              <span className="visually-hidden"> sur Instagram (nouvel onglet)</span>
+            </a>
+          </span>
+        </span>
         <span>{site.date} · proposition sans engagement</span>
       </p>
     </section>
